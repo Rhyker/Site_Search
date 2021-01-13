@@ -78,7 +78,7 @@ def query_builder(query_number, lot_num, unit_num, house_num, road_name, road_ty
 def query_sql(query):
     try:
         connection = pyodbc.connect(r"Driver={SQL Server};"
-                                    r"Server=EAG-ELT-SVR-001;"
+                                    r"Server=PLACE_HOLDER_SERVER;"      # Add in server info
                                     r"Database=VICMAP_DATA;"
                                     r"Trusted_Connection=yes;")
 
