@@ -1,0 +1,46 @@
+PAGE
+    Toplevel: Site_Search
+        Checkbutton: get_map_chk  
+        TCombobox: street_type_entry  
+        Label: unit_label  
+        Entry: lot_entry  
+        Label: house_label  
+        Label: lot_label  
+        Label: saerch_header  
+        Entry: house_entry  
+        Entry: unit_entry  
+        Entry: street_name_entry  
+        Entry: postcode_entry  
+        Entry: suburb_entry  
+        Label: street_name_label  
+        Label: suburb_label  
+        Label: postcode_label  
+        Label: street_type_label  
+        Button: search_button  
+        Menu Bar
+        Scrolledlistbox: results_list_box  
+            Listbox
+        Text: address_textbox  
+        Text: suburb_textbox  
+        Label: r_address_label  
+        Label: r_suburb_label  
+        Button: copy_address_btn  
+        Button: copy_sub_btn  
+        Label: search_results_label  
+        Label: r_site_header_label  
+        Label: r_postcode_label  
+        Text: postcode_textbox  
+        Button: copy_postcode_btn  
+        Label: r_sitename_label  
+        Text: sitename_textbox  
+        Button: copy_sitename_btn  
+        Text: mapref_textbox  
+        Text: lat_textbox  
+        Button: copy_mapref_btn  
+        Button: copy_lat_btn  
+        Label: r_mapref_label  
+        Label: r_lat_label  
+        Label: r_long_label  
+        Text: long_textbox  
+        Button: copy_long_btn  
+

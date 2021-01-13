@@ -1,0 +1,97 @@
+
+TO DO:
+
+- Make the two search types into views (allow for easier editing)
+
+- Could also include the route of the site somewhere as that data is available
+
+- Change font/background colours when outside zone 1 in returned site info boxes.
+    - What about phillip island / geelong
+
+- Remove EagleIconA.ico file and fix icon issue.
+
+- Abbreviate street types:
+    - Need csv with street type conversion
+    - convert user inputted type to expanded type using drop down menu
+
+- Network tiemout error, need a count down that occours when trying to query database (user specified time)
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+CHANGELOG:
+
+1.14
+ - Made config variables class variables of w.(Self.Foo) accessible from anywhere
+ - Added option to enabled/disable a prompt once map file is saved
+ - Added error popup for when map couldn't be saved
+
+
+1.13
+- Added suburb zones to database
+- Made zone viewable after searching (Displays in top right hand corner of returned info)
+- Colour coded zones to help identify each one
+- Added a tooltip on zone to explain what each zone number is
+- Added tooltip functionality
+- Added try/except clause to database fetching (to try and detect network errors)
+- Network error will print to search list to notify users
+
+
+1.12:
+- No right click temporarily removed.
+- Map ref load/don't-load option added (replaced no right click), allows searching without running report search to grab map ref. (Faster searching).
+- Maps can now be saved if no map ref exists, or a custom map ref can be entered.
+- Coordinates load even if no map ref is available.
+- Coordinate system changed from MDA to GDA, re-projection of coordinates no longer needed, speeds up search times. (Database has also been affected).
+- Error messages for map ref and coordinates loading added.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+NOTES:
+
+A4 = 3508, 2480
+(3508-20), (2480-501) = End size of map from wms
+
+URL FOR HTML PROPERTY REPORT VIEWER:
+(Insert property PFI at the end)
+
+http://services.land.vic.gov.au/landchannel/content/propertyReport?reportNo=1&reporthtml=11&reportname=basic&propertyIdentifier=
+
+https://services.land.vic.gov.au/landchannel/content/pdfreport?reportType=detailed&amp;source=propertyportal&amp;propertypfi=
+
+Other Urls:
+http://services.land.vic.gov.au/landchannel/content/pdfreport?propertypfi=151697881&reportType=11&source=msv
+
+https://services.land.vic.gov.au/landchannel/content/propertyReport?reportNo=1&reporthtml=11&reportname=basic&propertypfi=15169788
+
+https://services.land.vic.gov.au/landchannel/content/propertyReport?actionField=viewReport&reportType="+reportType+"&propertyIdentifier="+propertyIdentifier
+
+http://services.land.vic.gov.au/landchannel/content/propertyReport?reportNo=1&reporthtml=11&reportname=basic&propertyIdentifier=15169788
+
+//////////////////////////////
+
+http://services.land.vic.gov.au/catalogue/publicproxy/guest/dv_geoserver/wfs?service=wfs&version=2.0.0&request=getfeature&typenames=datavic:VMADD_ADDRESS,datavic:VMPROP_PARCEL_PROPERTY
+
+http://services.land.vic.gov.au/catalogue/publicproxy/guest/dv_geoserver/wfs?service=wfs&version=2.0.0&request=getfeature
+&typenames=datavic:VMADD_ADDRESS,datavic:VMPROP_PARCEL_MP
+&aliases=A,B
+&CQL_FILTER=WITHIN(B.SHAPE,A.SHAPE)
+
+ AND A.PROPERTY_PFI='41116831'
+
+&Filter=
+<Filter>
+	<And>
+		<PropertyIsEqualTo>
+            <ValueReference>/datavic:VMADD_ADDRESS.PROPERTY_PFI</ValueReference>
+            <Literal>41116831</Literal>
+        </PropertyIsEqualTo>
+		<PropertyIsEqualTo>
+            <ValueReference>datavic:VMADD_ADDRESS.PROPERTY_PFI</ValueReference>
+			<ValueReference>datavic:VMPROP_PARCEL_PROPERTY.PROPERTY_PFI</ValueReference>
+		</PropertyIsEqualTo>
+	</And>
+</Filter>
+
+////////////////////////////////
